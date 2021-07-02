@@ -259,3 +259,43 @@ value：
 @Scope(value="prototype")
 private UserService userService;
 ```
+
+
+
+# 4）生命周期相关的注解
+
+## 4.1 `@PostConstruct`
+
+### **作用：**
+
+```
+指定初始化方法
+```
+
+### **案例：**
+
+```java
+@PostConstruct  
+public void init() {  
+    System.out.println("初始化方法执行");  
+}
+```
+
+
+
+## 4.2 `@PreDestroy`
+
+### **作用：**
+
+```
+指定销毁方法
+```
+
+### **案例：**
+
+```java
+@PreDestroy  
+public void destroy() {  
+    System.out.println("销毁方法执行");  
+}
+```
