@@ -146,7 +146,7 @@ value：用于指定要注入的bean的id，其中，该属性可以省略不写
 
 ### **案例：**
 
-```
+```java
 @Autowire
 @Qualifier(value="userService") 
 //@Qualifier("userService")     //value属性可以省略不写
