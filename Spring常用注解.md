@@ -128,6 +128,8 @@ required：@Autowire注解默认情况下要求依赖对象必须存在。如果
 private UserService userService;
 ```
 
+
+
 ## 2.2 `@Qualifier`
 
 ### **作用：**
@@ -150,6 +152,8 @@ value：用于指定要注入的bean的id，其中，该属性可以省略不写
 //@Qualifier("userService")     //value属性可以省略不写
 private UserService userService;
 ```
+
+
 
 ## 2.3 `@Resource`
 
@@ -188,15 +192,15 @@ private UserService userService;
 
 ## 2.4 `@Value`
 
-**作用：**
+### **作用：**
 
 ```
 通过@Value可以将外部的值动态注入到Bean中，可以为基本类型数据和String类型数据的变量注入数据
 ```
 
-**案例：**
+### **案例：**
 
-```
+```java
 // 1.基本类型数据和String类型数据的变量注入数据
 @Value("tom") 
 private String name;
@@ -223,4 +227,35 @@ private String username;
   
 @Value("${jdbc.password}")  
 private String password;
+```
+
+
+
+# 3）用于改变bean作用范围的注解
+
+## 3.1 `@Scope`
+
+### **作用：**
+
+```
+指定bean的作用范围。
+```
+
+### **属性：**
+
+```java
+value：
+    1）singleton：单例
+    2）prototype：多例
+    3）request： 
+    4）session： 
+    5）globalsession：
+```
+
+### **案例：**
+
+```java
+@Autowire
+@Scope(value="prototype")
+private UserService userService;
 ```
